@@ -1,0 +1,88 @@
+body{
+    display: flex;
+    height: 100vh;
+    background-color: rgb(6, 54, 60);
+    overflow: hidden;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.piggy-bank {
+    position: relative;
+    width: 200px;
+    height: 120px;
+    background-color: #c92c2c;
+    border-radius: 100px 100px 70px 70px;
+    animation: wobble 1s infinite alternate;
+}
+
+@keyframes wobble {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(5deg); }
+}
+
+
+.eye{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(11, 11, 11);
+    border-radius: 50px;
+}
+
+.left-eye{
+    top: 30px;
+    left: 50px;
+}
+
+.right-eye{
+    top: 30px;
+    right: 50px;
+}
+.ear{
+    position: absolute;
+    width: 50px;
+    height: 30px;
+    background-color: rgb(255, 80, 98);
+    border-radius: 50%;
+}
+.left-ear{
+
+    top: -10px;
+    left: -10px;
+    transform: rotate(-30deg);
+}
+.right-ear{
+    top: -10px;
+    right: -10px;
+    transform: rotate(30deg);
+}
+
+.snout {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    background-color: rgb(209, 96, 115);
+    border-radius: 20px;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.coin {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: rgb(215, 185, 17);
+    border-radius: 50%;
+    left: 50%;
+    top: 38%; /* Adjusted to sit above the pig */
+    transform: translateX(-50%) translateY(0);
+    opacity: 10;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.piggy-bank:hover .coin {
+    opacity: 10;
+    transform: translateX(-50%) translateY(-20px); /* Moves the coin upward */
+}
